@@ -1,18 +1,11 @@
-import { Dado } from './dado';
-
 export class Jugador {
-    public nombre: string;
-    public puntoGanado: number;
-
-    constructor(nombre: string) {
+    constructor(nombre) {
         this.nombre = nombre;
         this.puntoGanado = 0;
     }
-
-    lanzaDados(dado1: Dado, dado2: Dado): number {
+    lanzaDados(dado1, dado2) {
         dado1.lanzar();
         dado2.lanzar();
-
         return dado1.puntos + dado2.puntos;
     }
 }
