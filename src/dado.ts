@@ -3,5 +3,6 @@ export class Dado {
 
     lanzar(): void {
         this.puntos = Math.floor(Math.random() * 6) + 1;
+
     }
 }
