@@ -1,16 +1,28 @@
+var _a;
 import { JuegoDados } from "./juegoDados.js";
-let jugador1 = document.getElementById("nombre1");
-let jugador2 = document.getElementById("nombre2");
-let formulario = document.getElementById("form");
-formulario.addEventListener("submit", function (event) {
+(_a = document.getElementById("form")) === null || _a === void 0 ? void 0 : _a.addEventListener("submit", (event) => {
     event.preventDefault();
-    let juego = new JuegoDados(jugador1.value, jugador2.value);
-    console.log(jugador1.value, jugador2.value);
+    const nombreJugador1 = document.getElementById("nombre1").value;
+    const nombreJugador2 = document.getElementById("nombre2").value;
+    const juego = new JuegoDados(nombreJugador1, nombreJugador2);
     juego.iniciarJuego();
-    if (juego.vencedor == null) {
-        console.log("Es un empate");
+    const jugadasDiv = document.getElementById("jugadas");
+    const puntosJugador1Span = document.getElementById("puntosJugador1");
+    const puntosJugador2Span = document.getElementById("puntosJugador2");
+    const ganadorDiv = document.getElementById("ganador");
+    const juegoDiv = document.getElementById("juego");
+    const form = document.getElementById("form");
+    form.style.display = "none";
+    juegoDiv.style.display = "block";
+    for (let i = 0; i < juego.cantidadJugadas; i++) {
+        jugadasDiv.innerHTML += `<p>Jugada ${i + 1}: Jugador 1: ${juego.marcadorJugador1}, Jugador 2: ${juego.marcadorJugador2}</p>`;
+    }
+    puntosJugador1Span.textContent = juego.marcadorJugador1.toString();
+    puntosJugador2Span.textContent = juego.marcadorJugador2.toString();
+    if (juego.vencedor) {
+        ganadorDiv.textContent = `Ganador: ${juego.vencedor.nombre}`;
     }
     else {
-        console.log(`${juego.vencedor.nombre} ha ganado`);
+        ganadorDiv.textContent = "Empate";
     }
 });

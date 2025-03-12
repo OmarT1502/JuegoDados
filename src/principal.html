@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Juego de dados</title>
 </head>
 <body>
@@ -19,6 +20,14 @@
         </div>
         <button type="submit" id="btnEnviar">Enviar</button>
     </form>
+    <div id="juego" style="display: none;">
+        <div id="jugadas"></div>
+        <div id="marcador">
+            <p>Jugador 1: <span id="puntosJugador1">0</span></p>
+            <p>Jugador 2: <span id="puntosJugador2">0</span></p>
+        </div>
+        <div id="ganador"></div>
+    </div>
     
     <script type="module" src="../dist/index.js"></script>
 </body>

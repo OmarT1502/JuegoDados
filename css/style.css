@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+#juego {
+    margin-top: 20px;
+}
+
+#jugadas {
+    margin-bottom: 10px;
+}
+
+#marcador {
+    margin-bottom: 10px;
+}

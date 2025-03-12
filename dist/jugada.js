@@ -1,6 +1,7 @@
 export class Jugada {
     iniciarJugada(jugador1, jugador2, dado1, dado2) {
-        let puntosJ1, puntosJ2;
+        let puntosJ1;
+        let puntosJ2;
         puntosJ1 = this.turnarJugador(jugador1, dado1, dado2);
         puntosJ2 = this.turnarJugador(jugador2, dado1, dado2);
         this.determinarGanador(jugador1, puntosJ1, jugador2, puntosJ2);
